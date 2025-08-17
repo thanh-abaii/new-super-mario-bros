@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Super Mario Bros</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <div class="game-title">
+                <h1>New Super Mario Bros</h1>
+                <span class="game-subtitle">Web Edition</span>
+            </div>
+            <div class="game-info">
+                <div class="level">Level: <span id="currentLevel">1</span> - <span id="levelName">Green Hill</span></div>
+                <div class="time">Time: <span id="timeRemaining">400</span></div>
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="lives">Lives: <span id="lives">3</span></div>
+                <div class="coins">Coins: <span id="coins">0</span></div>
+            </div>
+        </header>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="1200" height="600"></canvas>
+            
+            <div class="game-controls">
+                <div class="control-instructions">
+                    <h3>Controls:</h3>
+                    <p><strong>A/D or ←/→:</strong> Move Left/Right</p>
+                    <p><strong>Space or W:</strong> Jump</p>
+                    <p><strong>Shift:</strong> Run Fast</p>
+                    <p><strong>R:</strong> Reset Game</p>
+                    <p><strong>P:</strong> Pause/Resume</p>
+                </div>
+                
+                <div class="game-buttons">
+                    <button id="startBtn" class="game-btn">Start</button>
+                    <button id="pauseBtn" class="game-btn">Pause</button>
+                    <button id="resetBtn" class="game-btn">Reset</button>
+                </div>
+                
+                <div class="sound-controls">
+                    <h3>Audio:</h3>
+                    <button id="muteBtn" class="game-btn sound-btn">🔊 Sound ON</button>
+                    <div class="volume-controls">
+                        <label>Master: <input type="range" id="masterVolume" min="0" max="100" value="50"></label>
+                        <label>SFX: <input type="range" id="sfxVolume" min="0" max="100" value="70"></label>
+                        <label>Music: <input type="range" id="musicVolume" min="0" max="100" value="30"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="gameOverScreen" class="game-over-screen hidden">
+            <div class="game-over-content">
+                <h2>Game Over!</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <button id="restartBtn" class="game-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/sound.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/level.js"></script>
+    <script src="js/enemies.js"></script>
+    <script src="js/level-completion.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

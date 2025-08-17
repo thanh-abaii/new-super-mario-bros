@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Super Mario Bros - Sound Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Press Start 2P', monospace;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            border: 3px solid #FFD700;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #FFD700;
+            margin-bottom: 30px;
+            font-size: 20px;
+            text-shadow: 2px 2px 0px #000;
+        }
+        
+        .sound-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 5px solid #FFD700;
+        }
+        
+        .sound-section h2 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        
+        .sound-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .sound-btn {
+            background: linear-gradient(to bottom, #FFD700, #FFA500);
+            color: #000;
+            border: 3px solid #000;
+            padding: 10px 15px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 0 #B8860B;
+        }
+        
+        .sound-btn:hover {
+            background: linear-gradient(to bottom, #FFFF00, #FFD700);
+            transform: translateY(1px);
+            box-shadow: 0 3px 0 #B8860B;
+        }
+        
+        .sound-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        
+        .volume-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .volume-control label {
+            min-width: 80px;
+            font-size: 8px;
+            color: #FFD700;
+        }
+        
+        .volume-control input[type="range"] {
+            flex: 1;
+            height: 8px;
+            background: #333;
+            outline: none;
+            border-radius: 4px;
+        }
+        
+        .volume-control input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #FFD700;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .description {
+            font-size: 8px;
+            line-height: 1.6;
+            margin-top: 15px;
+            color: #CCCCCC;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .feature-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 8px;
+            line-height: 1.5;
+        }
+        
+        .feature-list li:before {
+            content: "🎵";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .back-btn {
+            display: block;
+            margin: 30px auto 0;
+            width: 200px;
+            background: linear-gradient(to bottom, #00AA00, #008800);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 10px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(to bottom, #00CC00, #00AA00);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,170,0,0.3);
+        }
+        
+        @media (max-width: 600px) {
+            .demo-container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 16px;
+            }
+            
+            .sound-buttons {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .sound-btn {
+                font-size: 6px;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎮 New Super Mario Bros Sound System Demo</h1>
+        
+        <div class="sound-section">
+            <h2>🎵 Sound Effects</h2>
+            <div class="sound-buttons">
+                <button class="sound-btn" onclick="playSound('jump')">🦘 Jump</button>
+                <button class="sound-btn" onclick="playSound('coin')">🪙 Coin</button>
+                <button class="sound-btn" onclick="playSound('enemyDefeat')">💀 Enemy Defeat</button>
+                <button class="sound-btn" onclick="playSound('powerup')">🍄 Power Up</button>
+                <button class="sound-btn" onclick="playSound('damage')">💥 Damage</button>
+                <button class="sound-btn" onclick="playSound('brickBreak')">🧱 Brick Break</button>
+                <button class="sound-btn" onclick="playSound('gameOver')">🏁 Game Over</button>
+                <button class="sound-btn" onclick="playSound('levelComplete')">🏆 Level Complete</button>
+            </div>
+            <p class="description">
+                All sound effects are generated procedurally using Web Audio API - no external sound files required!
+            </p>
+        </div>
+        
+        <div class="sound-section">
+            <h2>🎶 Background Music</h2>
+            <div class="sound-buttons">
+                <button class="sound-btn" onclick="startMusic()">▶️ Start Music</button>
+                <button class="sound-btn" onclick="stopMusic()">⏹️ Stop Music</button>
+                <button class="sound-btn" onclick="toggleMute()">🔇 Toggle Mute</button>
+            </div>
+            <p class="description">
+                Classic Mario-style chiptune melody that loops continuously during gameplay.
+            </p>
+        </div>
+        
+        <div class="sound-section">
+            <h2>🎚️ Audio Controls</h2>
+            <div class="volume-controls">
+                <div class="volume-control">
+                    <label>Master:</label>
+                    <input type="range" id="masterVol" min="0" max="100" value="50" onchange="setMasterVolume(this.value)">
+                    <span id="masterValue">50%</span>
+                </div>
+                <div class="volume-control">
+                    <label>SFX:</label>
+                    <input type="range" id="sfxVol" min="0" max="100" value="70" onchange="setSFXVolume(this.value)">
+                    <span id="sfxValue">70%</span>
+                </div>
+                <div class="volume-control">
+                    <label>Music:</label>
+                    <input type="range" id="musicVol" min="0" max="100" value="30" onchange="setMusicVolume(this.value)">
+                    <span id="musicValue">30%</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sound-section">
+            <h2>✨ Features</h2>
+            <ul class="feature-list">
+                <li>Procedural sound generation using Web Audio API</li>
+                <li>Real-time audio synthesis - no external files</li>
+                <li>Independent volume controls for different audio types</li>
+                <li>Cross-browser compatibility (Chrome, Firefox, Safari, Edge)</li>
+                <li>Mute/unmute functionality with keyboard shortcuts</li>
+                <li>Responsive design for mobile and desktop</li>
+                <li>Classic 8-bit Mario sound aesthetics</li>
+                <li>Low latency audio for responsive gameplay</li>
+            </ul>
+        </div>
+        
+        <a href="index.html" class="back-btn">🎮 Back to Game</a>
+    </div>
+    
+    <script src="js/sound.js"></script>
+    <script>
+        let soundManager;
+        
+        // Initialize sound manager
+        document.addEventListener('DOMContentLoaded', function() {
+            soundManager = new SoundManager();
+            console.log('Sound demo initialized!');
+        });
+        
+        // Resume audio context on first user interaction
+        document.addEventListener('click', function() {
+            if (soundManager) {
+                soundManager.resumeAudioContext();
+            }
+        }, { once: true });
+        
+        function playSound(soundName) {
+            if (soundManager) {
+                soundManager.play(soundName);
+                console.log(`Playing sound: ${soundName}`);
+            }
+        }
+        
+        function startMusic() {
+            if (soundManager) {
+                soundManager.startBackgroundMusic();
+                console.log('Background music started');
+            }
+        }
+        
+        function stopMusic() {
+            if (soundManager) {
+                soundManager.stopBackgroundMusic();
+                console.log('Background music stopped');
+            }
+        }
+        
+        function toggleMute() {
+            if (soundManager) {
+                const isMuted = soundManager.toggleMute();
+                console.log(`Audio ${isMuted ? 'muted' : 'unmuted'}`);
+            }
+        }
+        
+        function setMasterVolume(value) {
+            if (soundManager) {
+                soundManager.setMasterVolume(value / 100);
+                document.getElementById('masterValue').textContent = value + '%';
+            }
+        }
+        
+        function setSFXVolume(value) {
+            if (soundManager) {
+                soundManager.setSFXVolume(value / 100);
+                document.getElementById('sfxValue').textContent = value + '%';
+            }
+        }
+        
+        function setMusicVolume(value) {
+            if (soundManager) {
+                soundManager.setMusicVolume(value / 100);
+                document.getElementById('musicValue').textContent = value + '%';
+            }
+        }
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (!soundManager) return;
+            
+            switch(e.code) {
+                case 'Space':
+                    e.preventDefault();
+                    playSound('jump');
+                    break;
+                case 'KeyC':
+                    playSound('coin');
+                    break;
+                case 'KeyM':
+                    toggleMute();
+                    break;
+                case 'KeyP':
+                    startMusic();
+                    break;
+                case 'KeyS':
+                    stopMusic();
+                    break;
+            }
+        });
+        
+        console.log(`
+🎵 SOUND DEMO CONTROLS:
+   Space: Jump sound
+   C: Coin sound  
+   M: Toggle mute
+   P: Play music
+   S: Stop music
+   
+   Click any button to test sounds!
+        `);
+    </script>
+</body>
+</html>

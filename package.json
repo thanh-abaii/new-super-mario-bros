@@ -1,0 +1,45 @@
+{
+  "name": "new-super-mario-bros",
+  "version": "1.0.0",
+  "description": "🎮 New Super Mario Bros - HTML5 Canvas Game with 3 levels, complete audio system, and level progression",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000 || python3 -m http.server 8000 || live-server",
+    "build": "echo 'No build process required - pure HTML/CSS/JS'",
+    "deploy": "echo 'Deploy to GitHub Pages or any static host'",
+    "test": "echo 'Open index.html in browser to test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanh-abaii/new-super-mario-bros.git"
+  },
+  "keywords": [
+    "mario",
+    "game",
+    "html5",
+    "canvas",
+    "javascript",
+    "web-game",
+    "platformer",
+    "retro",
+    "super-mario",
+    "web-audio-api"
+  ],
+  "author": "AI Assistant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thanh-abaii/new-super-mario-bros/issues"
+  },
+  "homepage": "https://github.com/thanh-abaii/new-super-mario-bros",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
