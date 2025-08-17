@@ -2,7 +2,7 @@
 
 Một game New Super Mario Bros hoàn chỉnh được xây dựng bằng HTML5 Canvas, CSS3 và JavaScript thuần túy. Game bao gồm đầy đủ các tính năng kinh điển của Super Mario như nhảy, thu thập xu, tiêu diệt kẻ thù, vượt qua các chướng ngại vật và hoàn thành multiple levels.
 
-![New Super Mario Bros Test](https://thanh-abaii.github.io/new-super-mario-bros/test.html)
+![New Super Mario Bros Test page](https://thanh-abaii.github.io/new-super-mario-bros/test.html)
 
 ## 🌟 Tính năng chính
 
