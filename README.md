@@ -201,9 +201,9 @@ Dự án này được tạo ra cho mục đích học tập và giải trí. In
 
 ## 🔗 Demo
 
-**Live Demo**: https://YOUR_USERNAME.github.io/new-super-mario-bros
+**Live Demo**: https://thanh-abaii.github.io/new-super-mario-bros
 
-**GitHub Repository**: https://github.com/YOUR_USERNAME/new-super-mario-bros
+**GitHub Repository**: https://github.com/thanh-abaii/new-super-mario-bros
 
 **Screenshot Features**:
 - Responsive gameplay trên mọi devices
